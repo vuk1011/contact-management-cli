@@ -167,7 +167,6 @@ void _hndl_view_details()
 void _hndl_exit()
 {
     dsp_print("exitting...");
-    exit(0);
 }
 
 void _hndl_invalid()

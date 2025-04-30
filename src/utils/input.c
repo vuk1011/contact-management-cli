@@ -10,7 +10,7 @@
 
 char _buffer[_BUFFER_SIZE];
 
-int input_get_menu_choice()
+Menu_option input_get_menu_choice()
 {
     char input;
     int ret_val;

@@ -3,7 +3,7 @@
 
 #include "contact.h"
 
-enum menu_option
+typedef enum
 {
     OPTION_CREATE,
     OPTION_UPDATE,
@@ -15,9 +15,9 @@ enum menu_option
     OPTION_YES,
     OPTION_NO,
     OPTION_INVALID,
-};
+} Menu_option;
 
-int input_get_menu_choice();
+Menu_option input_get_menu_choice();
 void input_get_contact(Contact *contact);
 int input_get_yn_choice();
 int input_get_id();
