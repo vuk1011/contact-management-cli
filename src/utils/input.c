@@ -77,7 +77,7 @@ void _input_read_string(int n)
 void input_get_contact(Contact *contact)
 {
     // id
-    contact->id = cont_count() + 1;
+    contact->id = cont_count_get() + 1;
 
     // first name
     dsp_prompt_for_input_msg("Enter first name (max 31 characters)");

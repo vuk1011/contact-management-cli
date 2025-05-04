@@ -7,9 +7,8 @@ int main(int argc, char const *argv[])
 {
     /*
     TODO:
-    - use github for todo's
+    - fix naming style
     - search functionality
-    - persistency
     */
    
     st_load_contacts();
@@ -22,7 +21,7 @@ int main(int argc, char const *argv[])
         hndl_menu_choice(choice);
     }
 
-    st_store_contacts();
+    st_save_contacts();
 
     return 0;
 }

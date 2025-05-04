@@ -130,7 +130,7 @@ void dsp_contact_print_all()
         printf("(empty)\n");
     }
 
-    for (int i = 0; i < cont_count(); i++)
+    for (int i = 0; i < cont_count_get(); i++)
     {
         dsp_contact_print_short(cont_get_contact(i));
         printf("%s\n", _HORIZONTAL_LINE);

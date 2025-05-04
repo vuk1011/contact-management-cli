@@ -18,7 +18,10 @@ typedef struct
 
 #define CONTACTS_MAX 1024
 
-int cont_count();
+extern Contact contacts[CONTACTS_MAX];
+
+int cont_count_get();
+int cont_count_set(int count);
 int cont_list_full();
 int cont_list_empty();
 void cont_add(Contact *contact);

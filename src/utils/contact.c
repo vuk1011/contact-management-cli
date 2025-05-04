@@ -3,12 +3,17 @@
 
 #include "contact.h"
 
-Contact _contacts[CONTACTS_MAX];
+Contact contacts[CONTACTS_MAX];
 int _count = 0;
 
-int cont_count()
+int cont_count_get()
 {
     return _count;
+}
+
+int cont_count_set(int count)
+{
+    _count = count;
 }
 
 int cont_list_full()
@@ -23,15 +28,15 @@ int cont_list_empty()
 
 void cont_add(Contact *contact)
 {
-    _contacts[_count++] = *contact;
+    contacts[_count++] = *contact;
 }
 
 void cont_delete(int id)
 {
     for (int i = id - 1; i < _count - 1; i++)
     {
-        _contacts[i] = _contacts[i + 1];
-        _contacts[i].id--;
+        contacts[i] = contacts[i + 1];
+        contacts[i].id--;
     }
 
     _count--;
@@ -39,16 +44,16 @@ void cont_delete(int id)
 
 void cont_update(int id, Contact *updated_contact)
 {
-    strcpy(_contacts[id - 1].first_name, updated_contact->first_name);
-    strcpy(_contacts[id - 1].last_name, updated_contact->last_name);
-    strcpy(_contacts[id - 1].phone, updated_contact->phone);
-    strcpy(_contacts[id - 1].email, updated_contact->email);
-    strcpy(_contacts[id - 1].birthday, updated_contact->birthday);
+    strcpy(contacts[id - 1].first_name, updated_contact->first_name);
+    strcpy(contacts[id - 1].last_name, updated_contact->last_name);
+    strcpy(contacts[id - 1].phone, updated_contact->phone);
+    strcpy(contacts[id - 1].email, updated_contact->email);
+    strcpy(contacts[id - 1].birthday, updated_contact->birthday);
 }
 
 Contact *cont_get_contact(int i)
 {
-    return &_contacts[i];
+    return &contacts[i];
 }
 
 Contact *cont_get_contact_with_id(int id)
@@ -58,5 +63,5 @@ Contact *cont_get_contact_with_id(int id)
         return NULL;
     }
 
-    return &_contacts[id - 1];
+    return &contacts[id - 1];
 }
